@@ -1,0 +1,124 @@
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsla(0, 0%, 100%);
+  --white: hsla(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  --bold: 600;
+  --main-header-font: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-inline: auto;
+  font-size: 0.8rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: rgb(216, 216, 216);
+}
+main {
+  max-width: 60ch;
+  margin-top: 6rem;
+}
+.card {
+  border-radius: 10px;
+  padding: 2em;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+}
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 800px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--moderate-violet);
+}
+h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white, 0.5);
+}
+h3 {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: var(--white);
+}
+p {
+  font-weight: 500;
+  margin-top: 1.2rem;
+  color: var(--white, 0.1);
+}
+.purple {
+  background-color: var(--Moderate-violet);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top 5px right 20px;
+}
+.grey {
+  background-color: var(--Very-dark-grayish-blue);
+  background-image: url(./);
+}
+.white-long,
+.white-short {
+  background-color: white;
+}
+.white-long > p,
+.white-long > h3,
+.white-short > p,
+.white-short > h3 .dark {
+  background-color: var(--Very-dark-blackish-blue);
+}
+.card {
+  margin-block: 2em;
+}
+@media (min-width: 740px) {
+  .card {
+    margin: 0;
+  }
+  body {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "purple purple grey white-long"
+      "white-short dark dark white-long";
+    gap: 1em;
+  }
+  main {
+  }
+  #purple {
+    grid-area: var(--Moderate-violet);
+  }
+  #grey {
+    grid-area: var(--Very-dark-grayish-blue);
+  }
+  #white-long {
+    grid-area: white;
+  }
+  #white-short {
+    grid-area: white;
+  }
+  #dark {
+    grid-area: var(--Very-dark-blackish-blue);
+  }
+}
